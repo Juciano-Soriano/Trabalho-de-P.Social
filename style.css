@@ -1,0 +1,358 @@
+/* Paleta de Cores e Fontes */
+:root {
+    --cor-principal: #004d40; /* Verde escuro */
+    --cor-secundaria: #81c784; /* Verde claro */
+    --cor-fundo: #dde0e9; /* Cinza claro */
+    --cor-texto-claro: #ffffff; /* Branco */
+    --cor-texto-escuro: #333333; /* Cinza escuro */
+    --cor-destaque: #ffab40; /* Laranja */
+    --font-principal: 'Arial', sans-serif;
+}
+
+/* Estilos Gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+.page-card {
+  max-width: 1200px;   /* largura máxima do "card" */
+  margin: 20px auto;   /* centraliza na tela */
+  background: #fff;    /* fundo branco */
+  padding: 20px;       /* espaço interno */
+  border-radius: 12px; /* cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* sombra */
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;  /* segue o formato do card */
+    margin-bottom: 20px;  /* separa do conteúdo */
+    position: relative;   /* em vez de fixed */
+    width: 100%;          /* ocupa a largura do card */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.desktop-nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: var(--cor-destaque);
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: var(--cor-texto-claro);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-principal);
+    flex-direction: column;
+    text-align: center;
+    z-index: 900;
+}
+
+.mobile-nav a {
+    color: var(--cor-texto-claro);
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--cor-secundaria);
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+/* Estilos para as Seções */
+main {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: var(--cor-principal);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--cor-texto-escuro);
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Botões */
+.btn-principal {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 1rem 2.5rem;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-claro);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: #e58d20;
+}
+
+.btn-voltar {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #00332c;
+}
+
+/* Tutoriais e Itens da Grade */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tutorial-item {
+    background-color: var(--cor-texto-claro);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    transition: transform 0.3s;
+}
+
+.tutorial-item:hover {
+    transform: translateY(-5px);
+}
+
+.tutorial-item img {
+    width: 150px;         /* largura fixa para todas as imagens */
+    height: 150px;        /* altura fixa para todas as imagens */
+    object-fit: cover;    /* mantém proporção e corta o excesso se necessário */
+    border-radius: 10px;  /* cantos arredondados */
+    margin-bottom: 1rem;
+}
+
+/* Seção de Tutoriais Detalhados */
+#tutorial-detalhe {
+    display: none;
+}
+
+.tutorial-page {
+    background-color: var(--cor-texto-claro);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tutorial-content img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+}
+
+ol {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 para vídeos responsivos */
+    height: 0;
+    margin: 2rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Formulário de Contato */
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+form button {
+    cursor: pointer;
+    border: none;
+}
+
+/* Dicas de Saúde */
+.saude-dicas {
+    background-color: var(--cor-secundaria);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.saude-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--cor-principal);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.saude-link img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1rem;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Responsividade (Mobile First) */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    header {
+        padding: 1rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .btn-principal {
+        font-size: 1.2rem;
+    }
+    .tutorial-item img {
+        max-height: 150px;
+    }
+    body {
+  background-color: var(--cor-fundo); /* Mantém o fundo cinza */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+}
